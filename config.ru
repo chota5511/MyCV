@@ -5,4 +5,5 @@ require_relative 'config/environment'
 run Rails.application
 Rails.application.routes.draw do
   get 'home/Home'
+  get 'home/Banner'
 end
