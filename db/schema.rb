@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "devlanguage", id: :serial, force: :cascade do |t|
     t.text "name", null: false
     t.integer "level", null: false
+    t.text "description"
   end
 
   create_table "persionalinfo", id: :serial, force: :cascade do |t|

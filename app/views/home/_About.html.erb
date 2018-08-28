@@ -5,61 +5,33 @@
       <div class="menu-content pb-70 col-lg-8">
         <div class="title text-center">
           <h1 class="mb-10">About Myself</h1>
-          <p>Who are in extremely love with eco friendly system.</p>
+          <p><%= intro %></p>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-6 about-left">
         <p>
-          It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its popularity and technological advancement are concerned. The history of video game is as interesting as a fairy tale.
+          <%= about %>
         </p>
-        <h4 class="pb-40">Tools Expertness</h4>
-        
-        <div class="skillbar" data-percent="85%">
-            <div class="skill-bar-percent">After Effects 85%</div>
-            <div class="skillwrap">
-              <div class="skillbar-bar" style="width: 85%;"></div>
-            </div>
-        </div>
-
-        <div class="skillbar" data-percent="80%">
-            <div class="skill-bar-percent">Photoshop 80%</div>
-            <div class="skillwrap">
-              <div class="skillbar-bar" style="width: 80%;"></div>
-            </div>
-        </div>
-
-        <div class="skillbar" data-percent="40%">
-            <div class="skill-bar-percent">Illustrator 40%</div>
-            <div class="skillwrap">
-              <div class="skillbar-bar" style="width: 40%;"></div>
-            </div>
-        </div>
-
-        <div class="skillbar" data-percent="70%">
-            <div class="skill-bar-percent">Sublime 70%</div>
-            <div class="skillwrap">
-              <div class="skillbar-bar" style="width: 70%;"></div>
-            </div>
-        </div>
-
+        <h4 class="pb-40">Skills Status</h4>
+        <% skill.each do |i| %>
         <div class="skillbar" data-percent="75%">
-            <div class="skill-bar-percent">Sketch 75%</div>
+            <div class="skill-bar-percent"><%= i.name %> <%= i.level %>%</div>
             <div class="skillwrap">
-              <div class="skillbar-bar" style="width: 75%;"></div>
+              <div class="skillbar-bar" style="width: <%= i.level %>%;"></div>
             </div>
         </div>
-
+        <% end %>
       </div>
       <div class="col-lg-6 about-right justify-content-end d-flex">
         <div class="myself-wrap">
           <img class="img-fluid" src="/assets/about-img.jpg" alt="">
           <div class="desc">
-            <h4>Tonnie Johnson</h4>
-            <p class="pb-10">Interactive Designer</p>
-            <p><span class="lnr lnr-phone"></span> (012) +88 017 635 9754</p>
-            <p><span class="lnr lnr-envelope"></span> tonnie_johnson@gmail.com</p>
+            <h4><%= name %></h4>
+            <p class="pb-10"><%= specialist %></p>
+            <p><span class="lnr lnr-phone"></span> <%= phone %></p>
+            <p><span class="lnr lnr-envelope"></span> <%= email %></p>
             <a class="mt-30 text-uppercase talk-btn" href="#">Hire Me</span></a>
           </div>
         </div>
