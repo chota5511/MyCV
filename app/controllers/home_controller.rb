@@ -3,6 +3,8 @@ class HomeController < ApplicationController
     #Main Variables
     @name = "Nguyen Ly Quan"
     @intro = "Who are in extremely love with coding."
+    @quote = "Work gives you meaning and purpose and life is empty without it."
+    @quotesowner = "Stephen Hawking"
     p = PersionalInfo.first
 
     #Partial View "home/Banner": _Banner.html.erb
