@@ -5,10 +5,11 @@ class HomeController < ApplicationController
     @intro = "Who are in extremely love with coding."
     @quote = "Work gives you meaning and purpose and life is empty without it."
     @quotesowner = "Stephen Hawking"
-    p = PersionalInfo.first
+    pi = PersionalInfo.first
+    p = Project.limit(4)
 
     #Partial View "home/Banner": _Banner.html.erb
-    @specialist = Specialized.find_by_id(p.specializedid).name
+    @specialist = Specialized.find_by_id(pi.specializedid).name
     @about = PersionalInfo.first.about
 
     #Partial View "home/Service": _Service.html.erb
@@ -16,9 +17,11 @@ class HomeController < ApplicationController
 
     #Partial View "home/About": _About.html.erb
     @skill = Skill.all
-    @email = p.email
-    @phone = p.phone
+    @email = pi.email
+    @phone = pi.phone
 
+    #Partial View "home.Project": _Project.html.erb
+    @project = p
   end
 
 end
