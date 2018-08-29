@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     @quote = "Work gives you meaning and purpose and life is empty without it."
     @quotesowner = "Stephen Hawking"
     pi = PersionalInfo.first
-    p = Project.limit(4)
+    p = Project.limit(5)
 
     #Partial View "home/Banner": _Banner.html.erb
     @specialist = Specialized.find_by_id(pi.specializedid).name
