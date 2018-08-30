@@ -4,11 +4,14 @@ require_relative 'config/environment'
 
 run Rails.application
 Rails.application.routes.draw do
+  #Set root website to "home/Home": Home.html.erb (set home page)
   root 'home#Home'
 
-  #Get
-  get 'home/Home'
+  #Get method declare here
+  get '/home/Home'
+  get '/home/SubmitSucess'
+  get '/home/SubmitFailed'
 
-  #Post
-  post 'home/SubmitContact'
+  #Post method declare here
+  post '/home/SubmitContact'
 end

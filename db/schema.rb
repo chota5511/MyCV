@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 0) do
   enable_extension "plpgsql"
 
   create_table "contact", id: :serial, force: :cascade do |t|
-    t.text "name"
+    t.text "name", null: false
     t.text "email", null: false
-    t.text "subject", null: false
+    t.text "subject"
     t.text "message", null: false
   end
 
