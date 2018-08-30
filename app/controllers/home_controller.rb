@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  protect_from_forgery with: :exception
   def Home
     #Main Variables
     @name = "Nguyen Ly Quan"
@@ -24,4 +25,12 @@ class HomeController < ApplicationController
     @project = p
   end
 
+  def SubmitContact
+    c = Contact.new
+    c.name = params[:name]
+    c.email = params[:email]
+    c.subject = params[:subject]
+    c.message = params[:message]
+    c.save
+  end
 end

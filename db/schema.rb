@@ -15,6 +15,13 @@ ActiveRecord::Schema.define(version: 0) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "contact", id: :serial, force: :cascade do |t|
+    t.text "name"
+    t.text "email", null: false
+    t.text "subject", null: false
+    t.text "message", null: false
+  end
+
   create_table "devlanguage", id: :serial, force: :cascade do |t|
     t.text "name", null: false
     t.integer "level", null: false

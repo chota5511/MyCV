@@ -6,6 +6,9 @@ run Rails.application
 Rails.application.routes.draw do
   root 'home#Home'
 
+  #Get
   get 'home/Home'
-  get 'home/Banner'
+
+  #Post
+  post 'home/SubmitContact'
 end
