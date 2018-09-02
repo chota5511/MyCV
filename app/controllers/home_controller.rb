@@ -66,6 +66,7 @@ class HomeController < ApplicationController
     if c.save then
       #if c.save == true redirect to "home/SubmitSucess": home/SubmitSucess.html.erb view and send a mail to notify
       NotificationMailer.Contact(c.subject,c.email,c.name,c.message).deliver
+      NotificationMailer.ContactConfirm(c.name,c.email).deliver
       redirect_to "/home/SubmitSucess"
     else
       #If c.save == false redirect to "home/SubmitSucess": home/SubmitFalse.html.erb view and send a mail to notify

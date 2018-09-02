@@ -16,9 +16,8 @@ class NotificationMailer < ApplicationMailer
 
   #Confirm to contact submiter
   def ContactConfirm(name, email)
-    from: "Submit Confirm - Do not reply"
     @name = name
-    mail(to: email, subject: "Thanks for contacted me!")
+    mail(from: "Submit Confirm - Do not reply <quannnl97@gmail.com>", to: email, subject: "Thanks for contacted me!")
   end
 
 end
