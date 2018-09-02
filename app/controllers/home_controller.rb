@@ -13,7 +13,7 @@ class HomeController < ApplicationController
     @specialist = Specialized.find_by_id(pi.specializedid).name
     @about = PersionalInfo.first.about
 
-    #Partial View "home/Service": _Service.html.erb
+    #Partial View "home/Tool": _Tool.html.erb
     @devlanguage = DevLanguage.all
 
     #Partial View "home/About": _About.html.erb
