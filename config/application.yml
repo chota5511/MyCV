@@ -12,6 +12,6 @@
 
 
 #
-GMAIL_PORT:               '587'
+GMAIL_PORT:               '25'
 GMAIL_USER_NAME:          'quannnl97@gmail.com'
 GMAIL_PASSWORD:           'rqlbwcwscrtowemw'
