@@ -1,0 +1,9 @@
+development:
+  cloud_name: chota5511
+  api_key: '166129164822842'
+  api_secret: 'XblONycDnQ-_dMd3esB1fuFhlWc'
+
+production:
+  cloud_name: chota5511
+  api_key: '166129164822842'
+  api_secret: 'XblONycDnQ-_dMd3esB1fuFhlWc'
