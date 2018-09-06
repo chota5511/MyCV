@@ -14,4 +14,9 @@ Rails.application.routes.draw do
 
   #Post method declare here
   post '/home/SubmitContact'
+
+  scope module: 'admin', path: 'admin' do
+    root 'home#Home'
+    get '/home/Home'
+  end
 end
