@@ -3,15 +3,15 @@ Rails.application.routes.draw do
   root 'home#Home'
 
   # Get method declare here
-  get '/home/Home'
-  get '/home/SubmitSucess'
-  get '/home/SubmitFailed'
+  get 'home' => 'home#Home'
+  get 'contact-submit-sucess' => 'home#SubmitSucess'
+  get 'contact-submit-failed' => 'home#SubmitFalse'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
   # Post method declare here
-  post '/home/SubmitContact'
+  post 'contact-submit' => 'home#SubmitContact'
 
   # Set Admin scope with "admin" directory
   scope module: 'admin', path: 'admin' do
@@ -19,12 +19,12 @@ Rails.application.routes.draw do
     root 'dash_board#DashBoard'
 
     # Get method for admin scope declare here
-    get '/dash_board/DashBoard'
-    get '/login/Show'
-    get '/login/SignOut'
+    get 'dash-board' => 'dash_board#DashBoard'
+    get 'login' => 'login#Show'
+    get 'sign-out' => 'login#SignOut'
 
     # Post method for admin scope declare here
-    post '/login/Login'
+    post 'login/submit' => 'login#Login'
 
   end
 end

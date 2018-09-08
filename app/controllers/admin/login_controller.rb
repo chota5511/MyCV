@@ -5,7 +5,7 @@ class Admin::LoginController < ApplicationController
   #Action to show Login view "login/Show":Show.html.erb
   def Show
     if session[:UserInfo] != nil then
-      redirect_to "/admin/dash_board/DashBoard"
+      redirect_to "/admin/dash-board"
     end
   end
 
@@ -19,10 +19,10 @@ class Admin::LoginController < ApplicationController
       if session[:LoginStatus] != nil then
         session[:LoginStatus] = nil
       end
-      redirect_to "/admin/dash_board/DashBoard"
+      redirect_to "/admin/dash-board"
     else
       session[:LoginStatus] = "User ID or password is incorect"
-      redirect_to "/admin/login/Show"
+      redirect_to "/admin/login"
     end
   end
 
@@ -30,9 +30,9 @@ class Admin::LoginController < ApplicationController
   def SignOut
     if session[:UserInfo] != nil then
       session[:UserInfo] = nil
-      redirect_to "/admin/login/Show"
+      redirect_to "/admin/login"
     else
-      redirect_to "/admin/login/Show"
+      redirect_to "/admin/login"
     end
   end
 end

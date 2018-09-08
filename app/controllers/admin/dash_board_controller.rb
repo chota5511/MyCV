@@ -1,7 +1,7 @@
 class Admin::DashBoardController < AdminController
   def DashBoard
     if session[:UserInfo] == nil then
-      redirect_to "/admin/login/Show"
+      redirect_to "/admin/login"
     end
   end
 end
