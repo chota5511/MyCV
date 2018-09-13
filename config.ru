@@ -24,9 +24,13 @@ Rails.application.routes.draw do
     get 'dash-board' => 'dash_board#DashBoard'
     get 'login' => 'login#Show'
     get 'sign-out' => 'login#SignOut'
+    get 'project' => 'project#Show'
+    get 'project/:id/delete' => 'project#Delete'
 
     # Post method for admin scope declare here
     post 'login/submit' => 'login#Login'
+    post 'project/:id/edit' => 'project#Edit'
+    post 'project/create' => 'project#Create'
 
   end
 end
