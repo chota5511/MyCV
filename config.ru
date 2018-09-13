@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     post 'login/submit' => 'login#Login'
     post 'project/:id/edit' => 'project#Edit'
     post 'project/create' => 'project#Create'
+    post 'project/search' => 'project#Search'
 
   end
 end

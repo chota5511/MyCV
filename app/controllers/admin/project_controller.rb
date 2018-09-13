@@ -94,9 +94,38 @@ class Admin::ProjectController < AdminController
     end
   end
 
+  def Search
+    # If login data is not null
+    if session[:AdminID] != nil && session[:AdminPassword] then
+      @UserInfo = Admins.new
+      @UserInfo.id = session[:AdminID]
+      @UserInfo.password = session[:AdminPassword]
+      # If login data is verified
+      if @UserInfo.Verify == true then
+
+        # Initial new array to store project of searcher
+        @project = Array.new
+
+        # Find project that the keywork match with project's keywork pool
+        Project.all.each do |a|
+          @tmp = "#{a.id} #{a.name} #{a.link} #{a.description}"
+          if @tmp.include? params[:key] then
+            @project << a
+          end
+        end
+        render 'Show'
+      else
+        redirect_to "/admin/dash-board"
+      end
+    else
+      redirect_to "/admin/dash-board"
+    end
+  end
+
   # Action to delete a project
   def Delete
-    if session[:UserInfo] != nil then
+    # If login data is not null
+    if session[:AdminID] != nil && session[:AdminPassword] then
       @UserInfo = Admins.new
       @UserInfo.id = session[:AdminID]
       @UserInfo.password = session[:AdminPassword]
