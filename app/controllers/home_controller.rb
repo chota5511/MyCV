@@ -2,10 +2,10 @@ class HomeController < ApplicationController
   protect_from_forgery with: :exception
   def Home
     #Main Variables
-    @name = "Nguyen Ly Quan"
-    @intro = "Who are in extremely love with coding."
-    @quote = "Work gives you meaning and purpose and life is empty without it."
-    @quotesowner = "Stephen Hawking"
+    @name = Figaro.env.NAME_HOME
+    @intro = Figaro.env.INTRO_HOME
+    @quote = Figaro.env.QUOTE_HOME
+    @quoteowner = Figaro.env.QUOTE_OWER_HOME
     pi = PersionalInfo.first
     p = Project.limit(5)
 

@@ -94,6 +94,7 @@ class Admin::ProjectController < AdminController
     end
   end
 
+  # Action to search for project
   def Search
     # If login data is not null
     if session[:AdminID] != nil && session[:AdminPassword] then
@@ -103,14 +104,13 @@ class Admin::ProjectController < AdminController
       # If login data is verified
       if @UserInfo.Verify == true then
 
-        # Initial new array to store project of searcher
+        # Initial new array to store project of the searcher
         @project = Array.new
 
-        # Find project that the keywork match with project's keywork pool
-        Project.all.each do |a|
-          @tmp = "#{a.id} #{a.name} #{a.link} #{a.description}"
-          if @tmp.include? params[:key] then
-            @project << a
+        # Find project that the keywork match with project's keywords pool
+        Project.all.each do |p|
+          if p.Search(params[:key]) == true then
+            @project << p
           end
         end
         render 'Show'

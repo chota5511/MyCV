@@ -5,6 +5,7 @@ class Admin::LoginController < ApplicationController
   #Action to show Login view "login/Show":Show.html.erb
   def Show
     if session[:AdminID] != nil && session[:AdminPassword] != nil then
+      byebug
       @UserInfo = Admins.new
       @UserInfo.id = session[:AdminID]
       @UserInfo.password = session[:AdminPassword]
