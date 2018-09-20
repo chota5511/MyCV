@@ -4,7 +4,7 @@
  */
 @font-face {
   font-family: 'Material-Design-Iconic-Font';
-  src: url(' /assets/admin/Material-Design-Iconic-Font.woff2?v=2.2.0') format('woff2'), url(' /assets/admin/Material-Design-Iconic-Font.woff?v=2.2.0') format('woff'), url(' /assets/admin/Material-Design-Iconic-Font.ttf?v=2.2.0') format('truetype');
+  src: url('https://res.cloudinary.com/chota5511/raw/upload/v1537151842/MyCV/fonts/admin/Material-Design-Iconic-Font.woff2?v=2.2.0') format('woff2'), url('https://res.cloudinary.com/chota5511/raw/upload/v1537151842/MyCV/fonts/admin/Material-Design-Iconic-Font.woff?v=2.2.0') format('woff'), url('https://res.cloudinary.com/chota5511/raw/upload/v1537151901/MyCV/fonts/admin/Material-Design-Iconic-Font.ttf?v=2.2.0') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
