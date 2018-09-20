@@ -5,13 +5,6 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
 
-  # Disable assets precompile process
-
-  config.serve_static_assets = false
-  config.assets.js_compressor = :uglifier
-  config.assets.compile = false
-  config.assets.digest = true
-
   config.cache_classes = false
 
   # Do not eager load code on boot.
