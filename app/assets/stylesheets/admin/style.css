@@ -62,7 +62,24 @@ This files contents are outlined below>>>>>
 
 
  Base CSS
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+@font-face {
+	font-family: 'Asiyah Script';
+	src: url('../fonts/AsiyahScript.eot');
+	src: url('../fonts/AsiyahScript.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/AsiyahScript.woff') format('woff'),
+		url('../fonts/AsiyahScript.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'dead_stock_-_demoregular';
+    src: url('../fonts/dead_stock_-_demo-webfont.woff2') format('woff2'),
+         url('../fonts/dead_stock_-_demo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
+}
 .alignleft {
     float: left;
     margin-right: 15px;
