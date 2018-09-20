@@ -2,10 +2,10 @@ class HomeController < ApplicationController
   protect_from_forgery with: :exception
   def Home
     #Main Variables
-    @name = "Nguyen Ly Quan"
-    @intro = "Who are in extremely love with coding."
-    @quote = "Work gives you meaning and purpose and life is empty without it."
-    @quotesowner = "Stephen Hawking"
+    @name = Figaro.env.NAME_HOME
+    @intro = Figaro.env.INTRO_HOME
+    @quote = Figaro.env.QUOTE_HOME
+    @quoteowner = Figaro.env.QUOTE_OWER_HOME
     pi = PersionalInfo.first
     p = Project.limit(5)
 
@@ -29,7 +29,7 @@ class HomeController < ApplicationController
   def SubmitSucess
     if session[:contact_name] == nil
       #Redirect to "home/Home": Home.html.erb if no message wasn't send
-      redirect_to "/home/Home"
+      redirect_to "/home"
     else
       #Render "home/SubmitFailed": SubmitFailed.html.erb and erase session[:contact_name]
       @name = session[:contact_name]
@@ -41,7 +41,7 @@ class HomeController < ApplicationController
   def SubmitFailed
     if session[:contact_name] == nil
       #Redirect to "home/Home": Home.html.erb if no message wasn't send
-      redirect_to "/home/Home"
+      redirect_to "/home"
     else
       #Render "home/SubmitFailed": SubmitFailed.html.erb and erase session[:contact_name]
       @name = session[:contact_name]
@@ -67,11 +67,11 @@ class HomeController < ApplicationController
       #if c.save == true redirect to "home/SubmitSucess": home/SubmitSucess.html.erb view and send a mail to notify
       NotificationMailer.Contact(c.subject,c.email,c.name,c.message).deliver
       NotificationMailer.ContactConfirm(c.name,c.email).deliver
-      redirect_to "/home/SubmitSucess"
+      redirect_to "/contact-submit-sucess"
     else
       #If c.save == false redirect to "home/SubmitSucess": home/SubmitFalse.html.erb view and send a mail to notify
       NotificationMailer.ContactSubmitFailed.deliver
-      redirect_to "/home/SubmitFailed"
+      redirect_to "/contact-submit-failed"
     end
   end
 end
