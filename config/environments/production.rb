@@ -1,6 +1,13 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Disable assets precompile process
+
+  config.serve_static_assets = false
+  config.assets.js_compressor = :uglifier
+  config.assets.compile = false
+  config.assets.digest = true
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
