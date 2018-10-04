@@ -22,16 +22,32 @@ Rails.application.routes.draw do
 
     # Get method for admin scope declare here
     get 'dash-board' => 'dash_board#DashBoard'
+
+    ## Login
     get 'login' => 'login#Show'
     get 'sign-out' => 'login#SignOut'
+
+    ## Project
     get 'project' => 'project#Show'
     get 'project/:id/delete' => 'project#Delete'
 
+    ## Contact
+    get 'contact' => 'contact#Show'
+    get 'contact-all' => 'contact#ShowAllContact'
+    get 'contact/:id/delete' => 'contact#Delete'
+
     # Post method for admin scope declare here
+
+    ## Login
     post 'login/submit' => 'login#Login'
+
+    ## Project
     post 'project/:id/edit' => 'project#Edit'
     post 'project/create' => 'project#Create'
     post 'project/search' => 'project#Search'
+
+    ## Contact
+    post 'contact/search' => 'contact#Search'
 
   end
 end
