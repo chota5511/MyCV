@@ -17,7 +17,6 @@ class Project < ApplicationRecord
       if(@tmp_data.include? k)
         return true
       end
-      return false
     end
 
     # If not contained then return false
