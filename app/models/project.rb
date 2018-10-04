@@ -4,10 +4,10 @@ class Project < ApplicationRecord
   # Method to check if project data contain the input keywords
   def Search(keywords)
 
-    # Create key pool
+    # Create keywords pool
     @tmp = keywords.split(" ")
 
-    # Check if data pool contain any key of key pool
+    # Check if data pool contain any key of keywords pool
     @tmp.each do |k|
 
       # Create data pool
@@ -17,6 +17,7 @@ class Project < ApplicationRecord
       if(@tmp_data.include? k)
         return true
       end
+      return false
     end
 
     # If not contained then return false

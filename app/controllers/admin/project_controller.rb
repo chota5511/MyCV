@@ -107,7 +107,7 @@ class Admin::ProjectController < AdminController
         # Initial new array to store project of the searcher
         @project = Array.new
 
-        # Find project that the keywork match with project's keywords pool
+        # Find project that the keywords match the project's keywords pool
         Project.all.each do |p|
           if p.Search(params[:key]) == true then
             @project << p

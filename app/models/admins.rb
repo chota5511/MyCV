@@ -14,10 +14,10 @@ class Admins < ApplicationRecord
   # Method to check if admin data contain the input keywords
   def Search(keywords)
 
-    # Create key pool
+    # Create keywords pool
     @tmp = keywords.split(" ")
 
-    # Check if data pool contain any key of key pool
+    # Check if data pool contain any keyword of keywords pool
     @tmp.each do |k|
 
       # Create data pool
