@@ -11,7 +11,6 @@ SitemapGenerator::Sitemap.create do
   Contact.find_each do |c|
     add contact_path(c), changefreq: 'daily'
   end
-
   # Put links creation logic here.
   #
   # The root path '/' and sitemap index file are added automatically for you.
