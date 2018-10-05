@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>MyCV Dashboard</title>
+    <title><%= @UserInfo.name %></title>
 
     <!-- Fontfaces CSS-->
     <link href="https://res.cloudinary.com/chota5511/raw/upload/MyCV/stylesheets/admin/font-face.css" rel="stylesheet" media="all">
@@ -51,9 +51,9 @@
             <div class="menu-sidebar2__content js-scrollbar1">
                 <div class="account2">
                     <div class="image img-cir img-120">
-                        <img src="https://res.cloudinary.com/chota5511/MyCV/images/ava-<%= session[:AdminID] %>.png" alt="<%= session[:AdminID] %>" style="height:120px;width:120px;object-fit:cover"/>
+                        <img src="https://res.cloudinary.com/chota5511/MyCV/images/ava-<%= @UserInfo.id %>.png" alt="<%= @UserInfo.id %>" style="height:120px;width:120px;object-fit:cover"/>
                     </div>
-                    <h4 class="name"><%= session[:AdminID] %></h4>
+                    <h4 class="name"><%= @UserInfo.id %></h4>
                     <a href="/admin/sign-out">Sign out</a>
                 </div>
                 <nav class="navbar-sidebar2">
@@ -65,7 +65,7 @@
                       </li>
                       <li class="has-sub">
                         <a class="js-arrow" href="#">
-                          <i class="fas fa-trophy"></i>Table
+                          <i class="fas fa-cloud"></i>Website settings
                             <span class="arrow">
                               <i class="fas fa-angle-down"></i>
                             </span>
@@ -73,27 +73,27 @@
                         <ul class="list-unstyled navbar__sub-list js-sub-list">
                           <li>
                             <a href="#">
-                            <i class="far fa-check-square"></i>Home</a>
+                            <i class="fa fa-home"></i>Home</a>
                           </li>
                           <li>
                             <a href="#">
-                            <i class="fas fa-calendar-alt"></i>Tools</a>
+                            <i class="fas fa-code"></i>Tools</a>
                           </li>
                           <li>
                             <a href="#">
-                            <i class="fas fa-map-marker-alt"></i>About</a>
+                            <i class="fas fa-user"></i>About</a>
                           </li>
                           <li>
                             <a href="/admin/project">
-                            <i class="far fa-check-square"></i>Project</a>
+                            <i class="fa fa-check"></i>Project</a>
+                          </li>
+                          <li>
+                            <a href="/admin/contact">
+                            <i class="fas fa-group"></i>Contact</a>
                           </li>
                           <li>
                             <a href="#">
-                            <i class="fas fa-map-marker-alt"></i>Contact</a>
-                          </li>
-                          <li>
-                            <a href="#">
-                            <i class="fas fa-table"></i>Admin</a>
+                            <i class="fas fa-terminal"></i>Admin account</a>
                           </li>
                         </ul>
                       </li>
