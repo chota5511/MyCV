@@ -25,9 +25,10 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-
 # Use figaro
 gem 'figaro'
+# Use sitemap_generator game to generate sitemap for Website
+gem 'sitemap_generator'
 
 # Use cloudinary
 gem 'cloudinary'

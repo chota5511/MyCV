@@ -4,14 +4,9 @@ class Admin::LoginController < ApplicationController
 
   #Action to show Login view "login/Show":Show.html.erb
   def Show
-    if session[:AdminID] != nil && session[:AdminPassword] != nil then
-      byebug
-      @UserInfo = Admins.new
-      @UserInfo.id = session[:AdminID]
-      @UserInfo.password = session[:AdminPassword]
-      if @UserInfo.Verify == true then
-        redirect_to "/admin/dash-board"
-      end
+    @UserInfo = Admins.new(session[:UserInfo])
+    if @UserInfo.Verify == true then
+      redirect_to "/admin/dash-board"
     end
   end
 
@@ -21,8 +16,7 @@ class Admin::LoginController < ApplicationController
     @tmp.id = params[:id]
     @tmp.password = params[:password]
     if @tmp.Verify == true then
-      session[:AdminID] = @tmp.id
-      session[:AdminPassword] = @tmp.password
+      session[:UserInfo] = @tmp
       if session[:LoginStatus] != nil then
         session[:LoginStatus] = nil
       end
@@ -35,9 +29,8 @@ class Admin::LoginController < ApplicationController
 
   #Action to clear up Admin session and logout
   def SignOut
-    if session[:AdminID] != nil then
-      session[:AdminID] = nil
-      session[:AdminPassword] = nil
+    if session[:UserInfo] != nil then
+      session[:UserInfo] = nil
       redirect_to "/admin/login"
     else
       redirect_to "/admin/login"

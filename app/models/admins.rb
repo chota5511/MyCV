@@ -2,10 +2,16 @@ class Admins < ApplicationRecord
   self.table_name = "admins"
 
   def Verify
-    @tmp = Admins.find_by_id(self.id)
-    if @tmp != nil then
-      if @tmp.password == self.password
-        return true
+    if self.id != nil && self.password != nil then
+      # Get Admin user's info from database
+      @tmp = Admins.find_by_id(self.id)
+      # Check if Admin user ID is available
+      if @tmp != nil then
+        # Check if User's password on database is match with typed password
+        if @tmp.password == self.password
+          # Return true if match
+          return true
+        end
       end
     end
     return false
