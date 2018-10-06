@@ -42,9 +42,8 @@ class Admin::ProjectController < AdminController
 
         # Override project image by new project image
         if image_io != nil then
-          File.open(Rails.root.join('app','assets','images',"p#{@tmp.id}.png"),'wb') do |file|
-            file.write(image_io.read)
-          end
+          Cloudinary::Uploader.destroy("MyCV/images/p#{@tmp.id}", invalidate: true)
+          Cloudinary::Uploader.upload(image_io, public_id: "p#{@tmp.id}", folder: 'MyCV/images/')
         end
 
         # Save changed
@@ -72,9 +71,7 @@ class Admin::ProjectController < AdminController
 
       # Create project image with project ID
       image_io = params[:image]
-      File.open(Rails.root.join('app','assets','images',"p#{@tmp.id}.png"),'wb') do |file|
-        file.write(image_io.read)
-      end
+      Cloudinary::Uploader.upload(image_io, public_id: "p#{@tmp.id}", folder: 'MyCV/images/')
       redirect_to '/admin/project'
     else
       redirect_to '/admin/dash-board'
@@ -120,9 +117,7 @@ class Admin::ProjectController < AdminController
         @tmp.destroy
 
         # Delete project image with project ID
-        if File.exists? Rails.root.join('app','assets','images',"p#{@tmp.id}.png") then
-          File.delete Rails.root.join('app','assets','images',"p#{@tmp.id}.png")
-        end
+        Cloudinary::Api.delete_resources("MyCV/images/p#{@tmp.id}")
         redirect_to '/admin/project'
       end
     else
