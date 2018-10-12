@@ -13,11 +13,11 @@
                                 <li class="list-inline-item seprate">
                                     <span>/</span>
                                 </li>
-                                <li class="list-inline-item">Projects</li>
+                                <li class="list-inline-item">Tools</li>
                             </ul>
                         </div>
-                        <button class="au-btn au-btn-icon au-btn--green" data-target="#AddProject" data-toggle="modal">
-                            <i class="zmdi zmdi-plus"></i>add project
+                        <button class="au-btn au-btn-icon au-btn--green" data-target="#AddTool" data-toggle="modal">
+                            <i class="zmdi zmdi-plus"></i>add tool
                         </button>
                     </div>
                 </div>
@@ -34,11 +34,11 @@
                 <form action="/admin/project/search" method="post">
                   <%= token_tag %>
                   <div class="car-list-find" style="width:78%">
-                    <h6>Find the Project</h6>
+                    <h6>Find the Tool</h6>
                     <input type="text" name="key" placeholder="Type project info">
                   </div>
                   <div class="car-list-submit">
-                    <button type="submit" class="pink-btn" style="background-color:#333;width:100%">Find Projects</button>
+                    <button type="submit" class="pink-btn" style="background-color:#333;width:100%">Find Tools</button>
                   </div>
                 </form>
             </div>
@@ -47,23 +47,23 @@
                 <table style="width:100%; table-layout: fixed; overflow: hidden" class="table table-borderless table-striped table-earning">
                     <thead>
                         <tr>
-                            <th class="text-center" style="width:10%">Project ID</th>
-                            <th class="text-center" style="width:20%">Project image</th>
+                            <th class="text-center" style="width:10%">Tool ID</th>
+                            <th class="text-center" style="width:20%">Tools image</th>
                             <th class="text-center" style="width:15%">Name</th>
-                            <th class="text-center">Link</th>
+                            <th class="text-center">Description</th>
                         </tr>
                     </thead>
                     <tbody>
-                      <% @project.each do |p| %>
+                      <% @devlanguage.each do |d| %>
                         <tr>
                           <td class="text-center" style="width:10%">
-                            <button data-toggle="modal" data-target="#EditProject<%= p.id %>" type="button" style="color:#555">
-                              <i class="fa fa-edit"></i>&nbsp;<%= p.id %>
+                            <button data-toggle="modal" data-target="#EditTool<%= d.id %>" type="button" style="color:#555">
+                              <i class="fa fa-edit"></i>&nbsp;<%= d.id %>
                             </button>
                           </td>
-                          <td class="text-center" style="width:20%"><img src="/assets/p<%= p.id %>.png" style="height:100px"></td>
-                          <td class="text-center" style="width:15%"><%= p.name %></td>
-                          <td class="text-left" style="width:30%"><%= p.link %></img></td>
+                          <td class="text-center" style="width:20%"><img src="/assets/t<%= d.id %>.png" style="height:100px"></td>
+                          <td class="text-center" style="width:15%"><%= d.name %></td>
+                          <td class="text-left" style="width:30%"><%= d.description %></img></td>
                         </tr>
                       <% end %>
                     </tbody>
@@ -74,40 +74,40 @@
 </div>
 
 <!--Modal-->
-<% @project.each do |p| %>
-  <div class="modal fade" id="EditProject<%= p.id %>" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
+<% @devlanguage.each do |d| %>
+  <div class="modal fade" id="EditTool<%= d.id %>" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="scrollmodalLabel">Edit Project</h5>
+          <h5 class="modal-title" id="scrollmodalLabel">Edit Tool</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="/admin/project/<%= p.id %>/edit" method="post" enctype="multipart/form-data" class="form-horizontal">
+        <form action="/admin/tool/<%= d.id %>/edit" method="post" enctype="multipart/form-data" class="form-horizontal">
           <%= token_tag %>
           <div class="modal-body">
             <!--Content-->
             <div class="card-body card-block">
               <div class="row form-group">
                 <div class="col col-md-3">
-                  <label class=" form-control-label">Project ID</label>
+                  <label class=" form-control-label">Tool ID</label>
                 </div>
                 <div class="col-12 col-md-9">
-                  <p class="form-control-static"><%= p.id %></p>
+                  <p class="form-control-static"><%= d.id %></p>
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col col-md-3">
-                  <label for="text-input" class=" form-control-label">Project name</label>
+                  <label for="text-input" class=" form-control-label">Tool name</label>
                 </div>
                 <div class="col-12 col-md-9">
-                  <input type="text" required="" id="name" name="name" placeholder="Type name" class="form-control" value="<%= p.name %>">
+                  <input type="text" required="" id="name" name="name" placeholder="Type name" class="form-control" value="<%= d.name %>">
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col col-md-3">
-                  <label for="text-input" class=" form-control-label">Project image</label>
+                  <label for="text-input" class=" form-control-label">Tool image</label>
                 </div>
                 <div class="col-12 col-md-9">
                   <input type="file" accept="image/png | image/jpeg" id="image" name="image" placeholder="Choose image" class="form-control" style="border: none" value="">
@@ -115,18 +115,10 @@
               </div>
               <div class="row form-group">
                 <div class="col col-md-3">
-                  <label for="text-input" class=" form-control-label">Link</label>
-                </div>
-                <div class="col-12 col-md-9">
-                  <input type="text" required="" id="link" name="link" placeholder="Type link" class="form-control" value="<%= p.link %>">
-                </div>
-              </div>
-              <div class="row form-group">
-                <div class="col col-md-3">
                   <label for="description" class=" form-control-label">Description</label>
                 </div>
                 <div class="col-12 col-md-9">
-                  <textarea type="text-input" required="" id="description" name="description" placeholder="Content..." class="form-control" style="height: 200px;border: none"><%= p.description %></textarea>
+                  <textarea type="text-input" required="" id="description" name="description" placeholder="Content..." class="form-control" style="height: 200px;border: none"><%= d.description %></textarea>
                 </div>
               </div>
             </div>
@@ -135,23 +127,23 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
             <button type="submit" class="btn btn-primary">Confirm</button>
-            <button type="button" class="btn btn-secondary" style="background-color:red;border-color:red" onclick="location.href='/admin/project/<%= p.id =%>/delete'">Delete</button>
+            <button type="button" class="btn btn-secondary" style="background-color:red;border-color:red" onclick="location.href='/admin/tool/<%= d.id =%>/delete'">Delete</button>
           </div>
         </form>
       </div>
     </div>
   </div>
 <% end %>
-<div class="modal fade" id="AddProject" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
+<div class="modal fade" id="AddTool" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="scrollmodalLabel">Add Project</h5>
+        <h5 class="modal-title" id="scrollmodalLabel">Add Tool</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="/admin/project/create" method="post" enctype="multipart/form-data" class="form-horizontal">
+      <form action="/admin/tool/create" method="post" enctype="multipart/form-data" class="form-horizontal">
         <div class="modal-body">
           <!--Content-->
           <div class="modal-body">
@@ -160,7 +152,7 @@
               <%= token_tag %>
               <div class="row form-group">
                 <div class="col col-md-3">
-                  <label for="text-input" class=" form-control-label">Project name</label>
+                  <label for="text-input" class=" form-control-label">Tool name</label>
                 </div>
                 <div class="col-12 col-md-9">
                   <input type="text" required="" id="name" name="name" placeholder="Type name" class="form-control" value="">
@@ -168,18 +160,10 @@
               </div>
               <div class="row form-group">
                 <div class="col col-md-3">
-                  <label for="text-input" class=" form-control-label">Project image</label>
+                  <label for="text-input" class=" form-control-label">Tool image</label>
                 </div>
                 <div class="col-12 col-md-9">
                   <input type="file" accept="image/png | image/jpeg" required="" id="image" name="image" placeholder="Choose image" class="form-control" style="border: none" value="">
-                </div>
-              </div>
-              <div class="row form-group">
-                <div class="col col-md-3">
-                  <label for="text-input" class=" form-control-label">Link</label>
-                </div>
-                <div class="col-12 col-md-9">
-                  <input type="text" required="" id="link" name="link" placeholder="Type link" class="form-control" value="">
                 </div>
               </div>
               <div class="row form-group">

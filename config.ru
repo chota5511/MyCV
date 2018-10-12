@@ -36,6 +36,9 @@ Rails.application.routes.draw do
     get 'contact-all' => 'contact#ShowAllContact'
     get 'contact/:id/delete' => 'contact#Delete'
 
+    ## Tool
+    get 'tool' => 'tool#Show'
+
     # Post method for admin scope declare here
 
     ## Login

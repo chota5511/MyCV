@@ -43,5 +43,8 @@ Rails.application.routes.draw do
     post 'project/create' => 'project#Create'
     post 'project/search' => 'project#Search'
 
+    ## Contact
+    post 'contact/search' => 'contact#Search'
+
   end
 end
