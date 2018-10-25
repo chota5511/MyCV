@@ -74,4 +74,19 @@ class HomeController < ApplicationController
       redirect_to "/contact-submit-failed"
     end
   end
+
+  def NewsletterSignUp
+    e = Email.new
+    e.email = params[:EMAIL]
+
+    if e.save then
+      NotificationMailer.Newsletter(e.email).deliver
+      NotificationMailer.NewsletterConfirm(e.email).deliver
+      redirect_to "/home"
+    else
+      NotificationMailer.NewsletterSignupFailed.deliver
+      redirect_to "/home"
+    end
+  end
+
 end
