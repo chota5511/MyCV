@@ -76,15 +76,19 @@ class HomeController < ApplicationController
   end
 
   def NewsletterSignUp
-    e = Email.new
-    e.email = params[:EMAIL]
+    if Email.find_by_email(params[:EMAIL]) == nil then
+      e = Email.new
+      e.email = params[:EMAIL]
 
-    if e.save then
-      NotificationMailer.Newsletter(e.email).deliver
-      NotificationMailer.NewsletterConfirm(e.email).deliver
-      redirect_to "/home"
+      if e.save then
+        NotificationMailer.Newsletter(e.email).deliver
+        NotificationMailer.NewsletterConfirm(e.email).deliver
+        redirect_to "/home"
+      else
+        NotificationMailer.NewsletterSignupFailed.deliver
+        redirect_to "/home"
+      end
     else
-      NotificationMailer.NewsletterSignupFailed.deliver
       redirect_to "/home"
     end
   end
