@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     @name = Figaro.env.NAME_HOME
     @intro = Figaro.env.INTRO_HOME
     @quote = Figaro.env.QUOTE_HOME
-    @quoteowner = Figaro.env.QUOTE_OWER_HOME
+    @quoteowner = Figaro.env.QUOTE_OWNER_HOME
     pi = PersionalInfo.first
     p = Project.limit(5)
 

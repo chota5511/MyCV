@@ -40,6 +40,14 @@ Rails.application.routes.draw do
     ## Tool
     get 'tool' => 'tool#Show'
 
+    ## About
+    get 'about' => 'about#Show'
+    get 'about/:id/del-skill' => 'about#DelSkill'
+
+    ## Account Settings
+    get 'account-settings' => 'account_settings#Show'
+
+
     # Post method for admin scope declare here
 
     ## Login
@@ -52,6 +60,10 @@ Rails.application.routes.draw do
 
     ## Contact
     post 'contact/search' => 'contact#Search'
+
+    ## About
+    post 'about/add-skill' => 'about#EditSkill'
+    post 'about/:id/edit-skill' => 'about#EditSkill'
 
   end
 end
