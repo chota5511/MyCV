@@ -4,6 +4,8 @@ class Admin::AboutController < AdminController
 
     if @UserInfo.Verify == true then
       @skills = Skill.order('id desc').all
+      @persionalInfo = PersionalInfo.first
+      
     else
       redirect_to '/admin/dash-board'
     end
@@ -19,6 +21,6 @@ class Admin::AboutController < AdminController
   end
 
   def AddSkill
-    
+
   end
 end
