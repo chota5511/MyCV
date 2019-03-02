@@ -1,7 +1,7 @@
 #README
 # MyCV
 ## Ruby version: 2.5.1
-  - I recommended installing this version of ruby via Ruby Version Manager (RVM).
+  - I recommended installing this version of ruby via [Ruby Version Manager (RVM)](https://rvm.io/).
 
 ## System dependencies
   - libpq-dev
@@ -16,7 +16,8 @@
 
 ## Configuration
 
-## Database: PostgreSQL
+## Database
+  - PostgreSQL
   - To prevent any compatible issues, PostgreSQL version 9.4 is recommended.
 
 ## Database initialization
