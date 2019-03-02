@@ -62,7 +62,7 @@
   QUOTE_OWNER_HOME:         ''
   ```
 
-### Services (job queues, cache servers, search engines, etc.)
+### Services
   - Start PostgreSQL service before run the whole project.
 
 ### Deployment instructions
