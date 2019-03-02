@@ -84,4 +84,5 @@
 
 ## Authors
   - **Nguyen Ly Quan** - *Develop* - [chota5511](https://github.com/chota5511/)
+  
   See also the list of [contributors](https://github.com/chota5511/MyCV/graphs/contributors) who participated in this project.
