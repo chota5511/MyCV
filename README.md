@@ -20,7 +20,10 @@
   - To prevent any compatible issues, PostgreSQL version 9.4 is recommended.
 
 ## Database initialization
-  - Initial database with psql command: "$sudo -u postgres psql <project path>/MyCV.sql"
+  - Initial database with psql command:
+  ```
+  $sudo -u postgres psql <project path>/MyCV.sql
+  ```
   - Create application.yml in <project folder>/config with this form:
   ```
   # Add configuration values here, as shown below.
@@ -68,9 +71,9 @@
   ```
   - Run
   ```
-  $rake db:migrate"
+  $rake db:migrate
   ```
   - Run
   ```
-  $rails server"
+  $rails server
   ```
