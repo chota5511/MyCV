@@ -22,7 +22,7 @@
 ## Database initialization
   - Initial database with psql command: "$sudo -u postgres psql <project path>/MyCV.sql"
   - Create application.yml in <project folder>/config with this form:
-  '''
+  ```
   # Add configuration values here, as shown below.
   #
   # pusher_app_id: "2954"
@@ -54,7 +54,7 @@
   INTRO_HOME:               ''
   QUOTE_HOME:               ''
   QUOTE_OWNER_HOME:         ''
-  '''
+  ```
 
   ## Services (job queues, cache servers, search engines, etc.)
   - Start PostgreSQL service before run the whole project.
@@ -63,14 +63,14 @@
   - Make sure PostgreSQL service and Database was Initialed.
   - Go to the project folder
   - Run
-  '''
+  ```
   $bundle install
-  '''
+  ```
   - Run
-  '''
+  ```
   $rake db:migrate"
-  '''
+  ```
   - Run
-  '''
+  ```
   $rails server"
-  '''
+  ```
