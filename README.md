@@ -2,7 +2,7 @@
 # MyCV
 ## Getting Started
 ### Ruby version: 2.5.1
-  - I recommended installing this version of ruby via [Ruby Version Manager (RVM)](https://rvm.io/).
+  I recommended installing this version of ruby via [Ruby Version Manager (RVM)](https://rvm.io/).
 
 ### System dependencies
   - libpq-dev
@@ -61,9 +61,10 @@
   QUOTE_HOME:               ''
   QUOTE_OWNER_HOME:         ''
   ```
+  - Create Google App Password before fill the mailler section
 
 ### Services
-  - Start PostgreSQL service before run the whole project.
+  Start PostgreSQL service before run the whole project.
 
 ### Deployment instructions
   - Make sure PostgreSQL service and Database was Initialed.
@@ -80,3 +81,7 @@
   ```
   $rails server
   ```
+
+## Authors
+  - **Nguyen Ly Quan** - *Develop* - [chota5511](https://github.com/chota5511/)
+  See also the list of [contributors](https://github.com/chota5511/MyCV/graphs/contributors) who participated in this project.
