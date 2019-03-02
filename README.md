@@ -1,12 +1,13 @@
 #README
 # MyCV
-## Ruby version: 2.5.1
+## Getting Started
+### Ruby version: 2.5.1
   - I recommended installing this version of ruby via [Ruby Version Manager (RVM)](https://rvm.io/).
 
-## System dependencies
+### System dependencies
   - libpq-dev
 
-## Ruby gems
+### Ruby gems
   - pg
   - bundle
   - rails
@@ -14,13 +15,14 @@
   - figaro
   - sitemap_generator
 
-## Configuration
+### Configuration
 
-## Database
+### Database
   - PostgreSQL
   - To prevent any compatible issues, PostgreSQL version 9.4 is recommended.
 
-## Database initialization
+## Running Sequence
+### Database initialization
   - Initial database with psql command:
   ```
   $sudo -u postgres psql <project path>/MyCV.sql
@@ -60,10 +62,10 @@
   QUOTE_OWNER_HOME:         ''
   ```
 
-  ## Services (job queues, cache servers, search engines, etc.)
+### Services (job queues, cache servers, search engines, etc.)
   - Start PostgreSQL service before run the whole project.
 
-  ## Deployment instructions
+### Deployment instructions
   - Make sure PostgreSQL service and Database was Initialed.
   - Go to the project folder
   - Run
