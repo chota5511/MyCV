@@ -1,12 +1,14 @@
 #README
 # MyCV
+  
+
 ## Getting Started
 ### Ruby version
   Installing ruby-2.5.1 via [Ruby Version Manager (RVM)](https://rvm.io/) is recommended.
 
 ### System dependencies
   - postgresql
-  - postgresql-11
+  - postgresql-9.4
   - libpq-dev
   - ruby-2.5.1
 
