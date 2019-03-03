@@ -1,8 +1,8 @@
 #README
 # MyCV
 ## Getting Started
-### Ruby version: 2.5.1
-  I recommended installing this version of ruby via [Ruby Version Manager (RVM)](https://rvm.io/).
+### Ruby version
+  Installing ruby-2.5.1 via [Ruby Version Manager (RVM)](https://rvm.io/) is recommended.
 
 ### System dependencies
   - libpq-dev
@@ -69,20 +69,14 @@
 ### Deployment instructions
   - Make sure PostgreSQL service and Database was Initialed.
   - Go to the project folder
-  - Run
+  - Open terminal and run
   ```
   $bundle install
-  ```
-  - Run
-  ```
   $rake db:migrate
-  ```
-  - Run
-  ```
   $rails server
   ```
 
 ## Authors
   - **Nguyen Ly Quan** - *Develop* - [chota5511](https://github.com/chota5511/)
-  
+
   See also the list of [contributors](https://github.com/chota5511/MyCV/graphs/contributors) who participated in this project.
