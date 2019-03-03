@@ -2,10 +2,10 @@ class Admin::AboutController < AdminController
   def Show
     @UserInfo = Admins.new(session[:UserInfo])
 
-    if @UserInfo.Verify == true then
+    if @UserInfo.verify == true then
       @skills = Skill.order('id desc').all
       @persionalInfo = PersionalInfo.first
-      
+
     else
       redirect_to '/admin/dash-board'
     end

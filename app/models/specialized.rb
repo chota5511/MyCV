@@ -2,7 +2,7 @@ class Specialized < ApplicationRecord
   self.table_name = "specialized"
 
   # Method to check if specialized data contain the input keywords
-  def Search(keywords)
+  def search(keywords)
 
     # Create key pool
     @tmp = keywords.split(" ")

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # Post method declare here
   post 'contact-submit' => 'home#SubmitContact'
-  post 'newsletter-sign-up' => 'home#NewsletterSignUp'
+  post 'newsletter-sign-up' => 'home#NewsletterSignup'
 
   # Set Admin scope with "admin" directory
   scope module: 'admin', path: 'admin' do

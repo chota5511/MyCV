@@ -31,7 +31,7 @@ class NotificationMailer < ApplicationMailer
     mail(from: "Submit Confirm - Do not reply <quannnl97@gmail.com>", to: email, subject: "Thank you for sign up newsletter")
   end
 
-  # Sent message when a error with Newsletter method was happened
+  # Sent message when a error with Newsletter method was happen
   def NewsletterSignupFailed
     mail(to: "quannnl92@gmail.com", subject: "A failed newsletter signup")
   end

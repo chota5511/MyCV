@@ -2,7 +2,7 @@ class Skill < ApplicationRecord
   self.table_name = "skill"
 
   # Method to check if skill data contain the input keywords
-  def Search(keywords)
+  def search(keywords)
 
     # Create key pool
     @tmp = keywords.split(" ")

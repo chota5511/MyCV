@@ -5,7 +5,10 @@
   Installing ruby-2.5.1 via [Ruby Version Manager (RVM)](https://rvm.io/) is recommended.
 
 ### System dependencies
+  - postgresql
+  - postgresql-11
   - libpq-dev
+  - ruby-2.5.1
 
 ### Ruby gems
   - pg

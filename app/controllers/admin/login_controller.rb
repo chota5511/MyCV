@@ -5,7 +5,7 @@ class Admin::LoginController < ApplicationController
   #Action to show Login view "login/Show":Show.html.erb
   def Show
     @UserInfo = Admins.new(session[:UserInfo])
-    if @UserInfo.Verify == true then
+    if @UserInfo.verify == true then
       redirect_to "/admin/dash-board"
     end
   end
@@ -15,7 +15,7 @@ class Admin::LoginController < ApplicationController
     @tmp = Admins.new
     @tmp.id = params[:id]
     @tmp.password = params[:password]
-    if @tmp.Verify == true then
+    if @tmp.verify == true then
       session[:UserInfo] = @tmp
       if session[:LoginStatus] != nil then
         session[:LoginStatus] = nil
