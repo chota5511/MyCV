@@ -5,7 +5,7 @@ class Admin::ProjectController < AdminController
     # Get login info from session
     @UserInfo = Admins.new(session[:UserInfo])
     # If login data is verified
-    if @UserInfo.Verify == true then
+    if @UserInfo.verify == true then
       @project = Project.all
     else
       redirect_to '/admin/dash-board'
@@ -21,7 +21,7 @@ class Admin::ProjectController < AdminController
     image_io = params[:image]
 
     # If login data is verified
-    if @UserInfo.Verify == true then
+    if @UserInfo.verify == true then
       # If any of the parameters was changed
       if @tmp.name != params[:name] || @tmp.link != params[:link] || @tmp.description != params[:description] || image_io != nil then
 
@@ -61,7 +61,7 @@ class Admin::ProjectController < AdminController
     @UserInfo = Admins.new(session[:UserInfo])
 
     # If login data is verified
-    if @UserInfo.Verify == true then
+    if @UserInfo.verify == true then
       # Create a project
       @tmp = Project.new
       @tmp.name = params[:name]
@@ -84,14 +84,14 @@ class Admin::ProjectController < AdminController
     @UserInfo = Admins.new(session[:UserInfo])
 
     # If login data is verified
-    if @UserInfo.Verify == true then
+    if @UserInfo.verify == true then
 
       # Initial new array to store project of the searcher
       @project = Array.new
 
       # Find project that the keywords match with project's keywords pool
       Project.all.each do |p|
-        if p.Search(params[:key]) == true then
+        if p.search(params[:key]) == true then
           @project << p
         end
       end
@@ -107,7 +107,7 @@ class Admin::ProjectController < AdminController
     @UserInfo = Admins.new(session[:UserInfo])
 
     # If login data is verified
-    if @UserInfo.Verify == true then
+    if @UserInfo.verify == true then
       # Find project by ID
       @tmp = Project.find_by_id(params[:id])
 

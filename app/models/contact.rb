@@ -2,7 +2,7 @@ class Contact < ApplicationRecord
   self.table_name = "contact"
 
   # Method to check if contact data contain the input keywords
-  def Search(keywords)
+  def search(keywords)
 
     # Create keywords pool
     @tmp = keywords.split(" ")

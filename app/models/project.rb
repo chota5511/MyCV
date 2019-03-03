@@ -2,7 +2,7 @@ class Project < ApplicationRecord
   self.table_name = "project"
 
   # Method to check if project data contain the input keywords
-  def Search(keywords)
+  def search(keywords)
 
     # Create keywords pool
     @tmp = keywords.split(" ")

@@ -6,7 +6,7 @@ class Admin::DashBoardController < AdminController
     @UserInfo = Admins.new(session[:UserInfo])
 
     # If login data is verified
-    if @UserInfo.Verify != true then
+    if @UserInfo.verify != true then
       redirect_to "/admin/login"
     end
   end

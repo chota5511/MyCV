@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 # Use sitemap_generator game to generate sitemap for Website
 gem 'sitemap_generator'
+# Use JSON
+gem 'json'
 
 # Use cloudinary
 gem 'cloudinary'

@@ -5,7 +5,7 @@ class Admin::ContactController < AdminController
     # Get login info from session
     @UserInfo = Admins.new(session[:UserInfo])
 
-    if @UserInfo.Verify == true then
+    if @UserInfo.verify == true then
       @contact = Contact.order('id desc').limit(10)
     else
       redirect_to '/admin/dash-board'
@@ -17,7 +17,7 @@ class Admin::ContactController < AdminController
     # Get login info from session
     @UserInfo = Admins.new(session[:UserInfo])
 
-    if @UserInfo.Verify == true then
+    if @UserInfo.verify == true then
       @tmp = Contact.find_by_id(params[:id])
       if @tmp != nil then
         @tmp.destroy
@@ -33,10 +33,10 @@ class Admin::ContactController < AdminController
     # Get login info from session
     @UserInfo = Admins.new(session[:UserInfo])
 
-    if @UserInfo.Verify == true then
+    if @UserInfo.verify == true then
       @contact = Array.new
       Contact.all.order('id DESC').each do |c|
-        if c.Search(params[:key]) == true then
+        if c.search(params[:key]) == true then
           @contact << c
         end
       end
@@ -51,7 +51,7 @@ class Admin::ContactController < AdminController
     # Get login info from session
     @UserInfo = Admins.new(session[:UserInfo])
 
-    if @UserInfo.Verify == true then
+    if @UserInfo.verify == true then
       @contact = Contact.order('id desc')
       render 'Show'
     else

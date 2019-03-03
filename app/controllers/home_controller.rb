@@ -1,28 +1,33 @@
 class HomeController < ApplicationController
   protect_from_forgery with: :exception
   def Home
-    #Main Variables
-    @name = Figaro.env.NAME_HOME
-    @intro = Figaro.env.INTRO_HOME
-    @quote = Figaro.env.QUOTE_HOME
-    @quoteowner = Figaro.env.QUOTE_OWER_HOME
-    pi = PersionalInfo.first
-    p = Project.limit(5)
+    begin
+      #Main Variables
+      @name = Figaro.env.NAME_HOME
+      @intro = Figaro.env.INTRO_HOME
+      @quote = Figaro.env.QUOTE_HOME
+      @quoteowner = Figaro.env.QUOTE_OWNER_HOME
+      pi = PersionalInfo.first
+      p = Project.limit(5)
 
-    #Partial View "home/Banner": _Banner.html.erb
-    @specialist = Specialized.find_by_id(pi.specializedid).name
-    @about = PersionalInfo.first.about
+      #Partial View "home/Banner": _Banner.html.erb
+      @specialist = Specialized.find_by_id(pi.specializedid).name
+      @about = PersionalInfo.first.about
 
-    #Partial View "home/Tool": _Tool.html.erb
-    @devlanguage = DevLanguage.all
+      #Partial View "home/Tool": _Tool.html.erb
+      @devlanguage = DevLanguage.all
 
-    #Partial View "home/About": _About.html.erb
-    @skill = Skill.all
-    @email = pi.email
-    @phone = pi.phone
+      #Partial View "home/About": _About.html.erb
+      @skill = Skill.all
+      @email = pi.email
+      @phone = pi.phone
 
-    #Partial View "home.Project": _Project.html.erb
-    @project = p
+      #Partial View "home.Project": _Project.html.erb
+      @project = p
+    rescue => e
+      puts e.message
+      render_404
+    end
   end
 
   #Contact Submit Sucess View
@@ -74,4 +79,29 @@ class HomeController < ApplicationController
       redirect_to "/contact-submit-failed"
     end
   end
+
+  #Action signup for newsletter
+  def NewsletterSignup
+
+    if Email.find_by_email(params[:EMAIL]) == nil then
+      #If input email is not null create a new email record
+      e = Email.new
+      e.email = params[:EMAIL]
+
+      if e.save then
+        #If record saved success sent a notification message and redirect to home page
+        NotificationMailer.Newsletter(e.email).deliver
+        NotificationMailer.NewsletterConfirm(e.email).deliver
+        redirect_to "/home"
+      else
+        #If saved fail sent a failed notification message and redirect to home page
+        NotificationMailer.NewsletterSignupFailed.deliver
+        redirect_to "/home"
+      end
+    else
+      #If input email is none redirect to home
+      redirect_to "/home"
+    end
+  end
+
 end

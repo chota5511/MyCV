@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 0) do
     t.text "description"
   end
 
+  create_table "email", primary_key: "email", id: :text, force: :cascade do |t|
+  end
+
   create_table "persionalinfo", id: :serial, force: :cascade do |t|
     t.text "major", null: false
     t.integer "specializedid", null: false

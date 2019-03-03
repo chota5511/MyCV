@@ -1,7 +1,7 @@
 class Admins < ApplicationRecord
   self.table_name = "admins"
 
-  def Verify
+  def verify
     if self.id != nil && self.password != nil then
       # Get Admin user's info from database
       @tmp = Admins.find_by_id(self.id)
@@ -18,7 +18,7 @@ class Admins < ApplicationRecord
   end
 
   # Method to check if admin data contain the input keywords
-  def Search(keywords)
+  def search(keywords)
 
     # Create keywords pool
     @tmp = keywords.split(" ")
