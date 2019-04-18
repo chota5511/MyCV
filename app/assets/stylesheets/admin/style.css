@@ -1,4 +1,4 @@
-
+/*
 *******************************************
 *******************************************
 
@@ -62,6 +62,7 @@ This files contents are outlined below>>>>>
 
 
  Base CSS
+ */
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
 @font-face {
 	font-family: 'Asiyah Script';
@@ -1837,7 +1838,7 @@ Hompage-2contents-area CSS
 .hp2-area-bg{position: relative;z-index: 1;}
 .hp2-area-bg:after{position: absolute;content: "";width: 25%;height: 100%;background-image: url(../img/hp2-absolute-bg.jpg);background-size: cover;background-position: center;left:0;top: 0;z-index: -1;}
 .hp2-area-bg-right.hp2-area-bg:after{left: auto;right: 0;}
-.Hompage-2contents-area .pink-btn,.holiday-packages-left-item .pink-btn, .world-out-there-left .pink-btn,.hp2-slider-area .pink-btn{background: }
+.Hompage-2contents-area .pink-btn,.holiday-packages-left-item .pink-btn, .world-out-there-left .pink-btn,.hp2-slider-area .pink-btn{/*background: */}
 .section-padding-hp2{padding:70px 0;}
 .padding-top-hp2{padding-top: 70px;}
 .padding-bottom-hp2{padding-bottom: 70px;}
@@ -3420,7 +3421,7 @@ input.billing_ccradioexpired + label			{ opacity:.6; background-color:#E6E9EB; b
 
 
 
-<style>
+/*<style>*/
 #panel, #flip {
     padding: 5px;
     text-align: center;

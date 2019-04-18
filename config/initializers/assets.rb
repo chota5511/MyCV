@@ -9,7 +9,7 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 # precompile admin.js and admin.css to project
-Rails.application.config.assets.precompile += %w(admin.js admin.scss)
+Rails.application.config.assets.precompile += %w(admin.js admin.css elements.js fonts-admin.js) 
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
