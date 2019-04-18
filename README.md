@@ -1,18 +1,19 @@
 #README
 # MyCV
-  
+
 
 ## Getting Started
 ### Ruby version
-  Installing ruby-2.5.1 via [Ruby Version Manager (RVM)](https://rvm.io/) is recommended.
+  Installing ruby-2.6 via [Ruby Version Manager (RVM)](https://rvm.io/) is recommended.
 
 ### System dependencies
   - postgresql
   - postgresql-9.4
   - libpq-dev
-  - ruby-2.5.1
+  - ruby-2.6
 
 ### Ruby gems
+  - sassc-rails
   - pg
   - bundle
   - rails
@@ -66,7 +67,7 @@
   QUOTE_HOME:               ''
   QUOTE_OWNER_HOME:         ''
   ```
-  - Create Google App Password before fill the mailler section
+  - Create Google App Password before fill out the mailler section
 
 ### Services
   Start PostgreSQL service before run the whole project.
